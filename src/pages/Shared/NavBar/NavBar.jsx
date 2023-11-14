@@ -72,7 +72,7 @@ const NavBar = () => {
         {/* Larg Devices NavBar Menu End ===============  */}
 
         <div className="navbar-end">
-          <a className="btn border-red-400">appointment</a>
+          <a className="btn border-red-400 capitalize">appointment</a>
         </div>
       </div>
     );
