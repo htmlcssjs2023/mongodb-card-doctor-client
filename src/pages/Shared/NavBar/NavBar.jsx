@@ -2,6 +2,25 @@ import logo from '../../../assets/logo.svg';
 import { Link } from 'react-router-dom';
 
 const NavBar = () => {
+  const navMenues = (
+    <>
+      <li>
+        <a>Home</a>
+      </li>
+      <li>
+        <a>About</a>
+      </li>
+      <li>
+        <a>Services</a>
+      </li>
+      <li>
+        <a>Blog</a>
+      </li>
+      <li>
+        <a>Contact</a>
+      </li>
+    </>
+  );
     return (
       <div className="navbar">
         {/* =========Small Devices NavBar Menu Start============= */}
@@ -27,21 +46,7 @@ const NavBar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li>
-                <a>Home</a>
-              </li>
-              <li>
-                <a>About</a>
-              </li>
-              <li>
-                <a>Services</a>
-              </li>
-              <li>
-                <a>Blog</a>
-              </li>
-              <li>
-                <a>Contact</a>
-              </li>
+              {navMenues}
             </ul>
           </div>
           <Link to="/">
@@ -52,21 +57,7 @@ const NavBar = () => {
         {/* Large Devices NavBar Menu Start =============== */}
         <div className="navbar-start hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li>
-              <a>Home</a>
-            </li>
-            <li>
-              <a>About</a>
-            </li>
-            <li>
-              <a>Services</a>
-            </li>
-            <li>
-              <a>Blog</a>
-            </li>
-            <li>
-              <a>Contact</a>
-            </li>
+            {navMenues}
           </ul>
         </div>
         {/* Larg Devices NavBar Menu End ===============  */}
