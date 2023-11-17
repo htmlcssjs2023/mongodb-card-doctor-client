@@ -17,18 +17,24 @@ const AuthContextAPI = ({children}) => {
 
     // singIn user
     const signInUser = (email, password)=>{
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
+    // SETUP FIREBASE OBSERVER 
+    useEffect(()=>{
+        const unsubscriber = onAuthStateChanged(auth, createUser=>{
+            setUser(createUser);
+            console.log('current user: ', createUser);
+            setLoading(false);
+        })
 
-    // create observer
-    // useEffect(()=>{
-    //     const unsubscriber = onAuthStateChanged(auth, currentUser);
-    //     setUser(currentUser);
-    //     setLoading(false);
-    //     return ()=>{
-    //         return unsubscriber();
-    //     }
-    // }, []);
+    // cleanup the observer when the component is unmount
+        return ()=>{
+            return unsubscriber();
+        };
+
+    },[])
+
     const authInfo = {
         user,
         loading,
