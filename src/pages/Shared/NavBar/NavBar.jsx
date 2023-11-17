@@ -5,19 +5,19 @@ const NavBar = () => {
   const navMenues = (
     <>
       <li>
-        <a>Home</a>
+        <Link to="/">Home</Link>
       </li>
       <li>
-        <a>About</a>
+        <Link to="/about">About</Link>
       </li>
       <li>
-        <a>Services</a>
+        <Link to="/service">Services</Link>
       </li>
       <li>
-        <a>Blog</a>
+        <Link to="/blog">Blog</Link>
       </li>
       <li>
-        <a>Contact</a>
+        <Link to="/contact">Contact</Link>
       </li>
     </>
   );
@@ -63,7 +63,7 @@ const NavBar = () => {
         {/* Larg Devices NavBar Menu End ===============  */}
 
         <div className="navbar-end">
-          <a className="btn border-red-400 capitalize">appointment</a>
+          <Link to="/login" className="btn border-red-400 capitalize">appointment</Link>
         </div>
       </div>
     );
