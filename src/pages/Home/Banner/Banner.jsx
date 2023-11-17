@@ -39,7 +39,7 @@ const Banner = () => {
             ❮
           </a>
           <a href="#slide2" className="btn btn-circle bg-[#FF3811]">
-            ❯
+            ❯ 
           </a>
         </div>
       </div>
