@@ -5,7 +5,7 @@ import { AuthContext } from "../../context-api/AuthContextAPI";
 
 
 const SignUp = () => {
-  const {createUser} = useContext(AuthContext)
+  const {createUser, updateUser} = useContext(AuthContext)
   const handleSignUp = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -18,13 +18,15 @@ const SignUp = () => {
     .then(result => {
       const user = result.user;
       console.log(user);
+      // update user 
+       updateUser(user, {
+        displayName: name
+       })
     })
     .catch(error => {
       console.log(error)
     })
-
-
-
+    
   };
   return (
     <div className="hero min-h-screen bg-base-200">
