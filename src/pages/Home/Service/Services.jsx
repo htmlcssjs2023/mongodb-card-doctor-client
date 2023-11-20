@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ServiceCard from './ServiceCard';
 import { Link } from 'react-router-dom';
+import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 
 const Services = () => {
     const [services, setService] = useState([]);
@@ -13,15 +14,14 @@ const Services = () => {
 
     return (
       <div className="mb-20">
-        <div className="text-center space-y-3 w-1/2 mx-auto">
-          <p className="text-[#FF3811] text-[1.2rem] font-bold">Service</p>
-          <h2 className="text-5xl font-bold">Our Service Area</h2>
-          <p>
-            the majority have suffered alteration in some form, by injected
-            humour, or randomised words which don't look even slightly
-            believable.
-          </p>
-        </div>
+        <SectionTitle
+        miniTitle={`Service`}
+        title={`Our Service Area`}
+        details={`the majority have suffered alteration in some form, by injected
+        humour, or randomised words which don't look even slightly
+        believable.`}
+        ></SectionTitle>
+        
         <div className="grid justify-center lg:grid-cols-3 lg:gap-4">
           {services.map((service) => (
             <ServiceCard key={service._id} service={service}></ServiceCard>
