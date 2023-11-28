@@ -7,7 +7,7 @@ const Services = () => {
     const [services, setService] = useState([]);
     // console.log(services)
     useEffect(()=>{
-        fetch('services.json')
+        fetch('http://localhost:5000/services')
         .then(result => result.json())
         .then(data => setService(data))
     }, [])
@@ -22,7 +22,7 @@ const Services = () => {
         believable.`}
         ></SectionTitle>
         
-        <div className="grid justify-center lg:grid-cols-3 lg:gap-4">
+        <div className="grid justify-center lg:grid-cols-3 lg:gap-3">
           {services.map((service) => (
             <ServiceCard key={service._id} service={service}></ServiceCard>
           ))}
